@@ -1,57 +1,212 @@
-html {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- }
 
-div#encabezado {
-  background-color: #8B4513;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-  height: auto;
+/* ==========================================
+   ESTILO GENERAL - AMBIENTE SALÓN PING-PONG
+   ========================================== */
+body {
+    background-color: #0d0c1d; /* Fondo oscuro club/arcade */
+    color: #e0e0ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-div#columna_principal{
- float: left;
- background-color: #FFFFFF; 
+/* ==========================================
+   ENCABEZADO Y MENÚ (LA RED)
+   ========================================== */
+#encabezado {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#encabezado h1 {
+    color: #ff0055; /* Rojo Neón */
+    font-size: 3rem;
+    text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
 }
 
 .navbar {
-        margin: 0 px;
-        padding: 0 px;
-        text-align: left;
-        font-size: 18px;
-        list-style-type:none;
-        height: auto;
-        background-color: #8B4513;
-        }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, #00d2ff 0%, #9b51e0 100%); /* Azul a Morado */
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
 }
 
-ul li {
-  float: left;
+.navbar li {
+    margin: 0 15px;
 }
 
-ul li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.navbar li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
-ul li a:hover {
-  background-color: #111111;
+.navbar li a:hover {
+    color: #ff0055;
+    text-shadow: 0 0 8px #ff0055;
 }
 
+/* ==========================================
+   CONTENIDO PRINCIPAL Y REDES
+   ========================================== */
+#pagina {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+#columna_principal {
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    color: #00d2ff; /* Azul Neón */
+    text-shadow: 0 0 8px #00d2ff;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+p {
+    line-height: 1.6;
+    color: #b0b5e3;
+    font-size: 1.1rem;
+}
+
+/* Enlaces de contacto */
+p a {
+    color: #ff0055;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 0, 85, 0.5);
+    transition: color 0.3s;
+}
+
+p a:hover {
+    color: #00d2ff;
+    text-shadow: 0 0 5px #00d2ff;
+}
+
+/* Logos de Redes Sociales */
 img {
-  display: block;
-  margin: 0 auto;
+    border-radius: 10px;
+    border: 2px solid #9b51e0; /* Contorno Morado */
+    box-shadow: 0 0 10px rgba(155, 81, 224, 0.4);
+    transition: transform 0.3s, border-color 0.3s;
+    margin-bottom: 20px;
+}
+
+img:hover {
+    transform: scale(1.05);
+    border-color: #ff0055; /* Cambia a Rojo en Hover */
+}
+
+/* ==========================================
+   FORMULARIO DE COMENTARIOS
+   ========================================== */
+.container {
+    background-color: #161933; /* Azul oscuro estilo tablero */
+    border: 3px solid #9b51e0; /* Borde Morado Neón */
+    border-radius: 15px;
+    padding: 30px;
+    margin: 40px 0;
+    box-shadow: 0 0 20px rgba(155, 81, 224, 0.2);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.container h1 {
+    color: #9b51e0; /* Título interno en morado */
+    font-size: 2rem;
+    text-shadow: 0 0 8px #9b51e0;
+    margin-top: 0;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.col {
+    flex: 1;
+}
+
+/* Cajas de texto (Inputs y Textarea) */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    background-color: #0d0c1d;
+    border: 2px solid #00d2ff; /* Borde inicial Azul */
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #ff0055; /* Cambia a Rojo Neón al escribir */
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.5);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+/* Botón de Enviar */
+.btn-dark {
+    background: linear-gradient(45deg, #00d2ff, #9b51e0); /* Azul a Morado */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.btn-dark:hover {
+    transform: scale(1.02);
+    background: linear-gradient(45deg, #ff0055, #9b51e0); /* Cambia a Rojo/Morado */
+    box-shadow: 0 0 25px rgba(255, 0, 85, 0.6);
+}
+
+/* ==========================================
+   MAPA (IFRAME)
+   ========================================== */
+iframe {
+    max-width: 100%;
+    border-radius: 12px;
+    border: 3px solid #00d2ff; /* Borde Azul Neón */
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+    margin-top: 20px;
 }
