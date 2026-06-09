@@ -1,65 +1,125 @@
-html {
-    background-color: #BBA9BB;
-    font-family: "Garamond", Garamond;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 body {
-    width: 70%;
-    margin: 0 auto;
-    background-color: #ECECEC;
-    padding: 0 15px 15px 15px;
-    border: 5px solid black;
-}
-
-h1 {
-    text-align: center;
+    background-color: #0d0c1d; /* Fondo oscuro tipo club/arcade */
+    color: #e0e0ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 10px 0;
-    color: #00539F;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-p {
-    color: blue;
+/* ==========================================
+   ENCABEZADO Y MENÚ (LA RED)
+   ========================================== */
+h1 {
+    color: #ff0055; /* Rojo Neón */
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, #00d2ff 0%, #9b51e0 100%); /* Azul a Morado */
+    border-radius: 30px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
 }
 
 li {
-    color: blue;
+    margin: 0 15px;
 }
 
-/* Media Query para pantallas pequeñas */
-@media only screen and (max-width: 400px) {
-    h1 {
-        font-size: 2vw;
-        text-align: center;
-        margin: 0;
-        color: #00539F;
-        text-shadow: 3px 3px 1px black;
-    }
-    p {
-        font-size: 1vw;
-    }
-    li {
-        font-size: 1vw;
-    }
+li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
-/* Media Query para pantallas medianas y grandes */
-@media only screen and (min-width: 401px) and (max-width: 1980px) {
-    h1 {
-        font-size: 5vw;
-        text-align: center;
-        margin: 0;
-        padding: 10px 0;
-        color: #00539F;
-        text-shadow: 3px 3px 1px black;
-    }
-    p {
-        font-size: 3vw;
-    }
-    li {
-        font-size: 3vw;
-    }
+li a:hover {
+    color: #ff0055;
+    text-shadow: 0 0 8px #ff0055;
+}
+
+/* ==========================================
+   CONTENIDO PRINCIPAL (LA MESA DE JUEGO)
+   ========================================== */
+/* Modificamos el div central para que parezca la mesa */
+body > div:nth-of-type(2) {
+    background-color: #161933; /* Azul muy oscuro/tablero */
+    border: 4px solid #00d2ff; /* Línea de la mesa en azul neón */
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    margin: 30px 0;
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.2), inset 0 0 15px rgba(155, 81, 224, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    color: #9b51e0; /* Morado Neón */
+    text-shadow: 0 0 8px #9b51e0;
+    margin-top: 25px;
+}
+
+p {
+    line-height: 1.6;
+    color: #b0b5e3;
+}
+
+/* Elementos multimedia */
+iframe, img {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 2px solid #9b51e0; /* Borde morado */
+    box-shadow: 0 0 10px rgba(155, 81, 224, 0.5);
+    margin-bottom: 20px;
+}
+
+/* El botón modificado (reemplaza o complementa el tuyo) */
+.testbtn {
+    background: linear-gradient(45deg, #ff0055, #9b51e0); /* Rojo a Morado */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 15px 0;
+}
+
+.testbtn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #00d2ff, #9b51e0); /* Cambia a Azul/Morado */
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.7);
+}
+
+/* ==========================================
+   PIE DE PÁGINA
+   ========================================== */
+body > div:nth-of-type(3) {
+    font-size: 0.8rem;
+    color: #656a93;
+    margin-top: auto;
+    padding: 20px 0;
 }
