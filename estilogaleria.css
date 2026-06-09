@@ -1,25 +1,101 @@
-div.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+/* ==========================================
+   ESTILO GENERAL - AMBIENTE SALÓN PING-PONG
+   ========================================== */
+body {
+    background-color: #0d0c1d; /* Fondo oscuro club/arcade */
+    color: #e0e0ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
-div.gallery-item {
-  margin: 5px;
-  border  1px solid #ccc;
-  width:  180px;
+/* ==========================================
+   TÍTULO DE LA GALERÍA (NEÓN ROJO)
+   ========================================== */
+h1 {
+    color: #ff0055; /* Rojo Neón */
+    text-align: center;
+    font-size: 2.8rem;
+    text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
-div.gallery-item:hover {
-  border: 1px solid #777;
+/* ==========================================
+   CONTENEDOR DE LA GALERÍA (FLEXIBLE / GRID)
+   ========================================== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
 }
 
-div.gallery-item img {
-    width: 100%
-    height: auto;
+/* ==========================================
+   TARJETAS DE IMAGEN (CADA MESA)
+   ========================================== */
+.gallery-item {
+    background-color: #161933; /* Azul oscuro/tablero */
+    border: 3px solid #00d2ff; /* Borde Azul Neón */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-div.gallery-item div.desc {
-  padding: 15px;
-  text-align: center;
+/* Efecto al pasar el mouse por la tarjeta */
+.gallery-item:hover {
+    transform: translateY(-5px); /* Pequeño salto hacia arriba */
+    border-color: #9b51e0; /* El borde cambia a Morado Neón */
+    box-shadow: 0 0 20px rgba(155, 81, 224, 0.6);
+}
+
+/* Ajustes de los enlaces e imágenes */
+.gallery-item a {
+    display: block;
+    width: 100%;
+    height: 160px; /* Altura fija para que todas las fotos queden parejas */
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto zoom en la foto al hacer hover */
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* ==========================================
+   DESCRIPCIÓN (PIE DE CADA TARJETA)
+   ========================================== */
+.desc {
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ffffff;
+    background: linear-gradient(180deg, #161933 0%, #0d0c1d 100%);
+    border-top: 1px solid rgba(0, 210, 255, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* El texto cambia a morado cuando pasas el mouse por la tarjeta */
+.gallery-item:hover .desc {
+    color: #9b51e0;
 }
